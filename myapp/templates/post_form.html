@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>새 글 작성 페이지</title>
+</head>
+<body>
+  <!-- action=데이터를 처리할 서버 url, 빈문자열이면 현재 페이지로
+  method='POST' POST 요청 보내야함
+  enctype: 폼 데이터가 서버로 제출될 때 해당 데이터가 인코딩되는 방법 명시
+    : method가 'POST'인 경우에만 사용 가능
+   multipart/from-data: 모든 문자를 인코딩하지 않음을 명시, 파일이나 이미지 제출할때 사용-->
+  <form action="" method="POST" enctype="multipart/form-data">
+    <!-- django에서 form 태그를 사용하기 위해선 token 사용 필수 -->
+    {% csrf_token %}
+
+    <!-- django의 폼은 table로써 표현 가능 -->
+    <table>
+      {{ form.as_table }}
+    </table>
+
+    <!-- 서버로 데이터 전송 -->
+    <input type="submit" value="새 글 작성">
+  </form>
+</body>
+</html>

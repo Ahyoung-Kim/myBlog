@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail 페이지</title>
+</head>
+<body>
+  <h1>제목: {{ post_detail.title }}</h1>
+  <h3>작성날짜: {{ post_detail.date }}</h3>
+
+  <h4>본문</h4>
+  <p>
+    {{ post_detail.body }}
+  </p>
+
+  <!-- 사진이 첨부되어 있다면 사진 보여주기 -->
+  {% if post_detail.photo %}
+    <img src="{{ post_detail.photo.url }}" alt="본문사진" height="200">
+  {% endif %}
+
+  <!-- 댓글 폼 -->
+  <!-- 제출 버튼을 누르면 댓글 폼을 Post 해줄 서버로 넘겨주어야 함-->
+  <!-- 이때 Comment 객체는 Post 객체를 외래키로 가지고 있기 때문에
+   post_detail의 id도 넘겨주기 -->
+  <form action="{% url 'comment' post_detail.id %}" method="POST">
+    {% csrf_token %}
+    {{ comment_form }}
+    <input type="submit" value="댓글 작성">
+  </form>
+
+  <hr>
+  <!-- 댓글 목록들 -->
+  <!-- django에서는 특정 객체의 집합들을 객체_set 이라고 함-->
+  {% for comment in post_detail.comment_set.all %}
+    <div class="comment">
+      <span>{{ comment }}</span>
+      <span>{{ comment.date }}</span>
+    </div>
+  {% endfor %}
+</body>
+</html>

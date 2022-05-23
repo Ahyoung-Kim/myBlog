@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'EliceDigitalBaeum_Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  font-family: 'EliceDigitalBaeum_Bold', sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background-color: rgb(213, 236, 210);
+  height: 150px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .3);
+}
+
+header .inner {
+  width: 700px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+header .inner h1 {
+  margin: 0;
+  position: absolute;
+  top: calc((150px / 2) - (150px / 4.5));
+  left: calc((350px * 0.45));
+}
+
+header .inner .new-post {
+  width: 100px;
+  height: 33px;
+  border-radius: 8px;
+  border: 3px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+header .inner .new-post:hover,
+header .inner .new-post:hover a {
+  color: rgb(17, 107, 17);
+  border-color: rgb(17, 107, 17);
+  background-color: rgb(223, 244, 221);
+}
+
+header .inner .new-post a {
+  font-size: 20px;
+}
