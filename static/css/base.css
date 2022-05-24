@@ -62,6 +62,17 @@ header .inner a.blog-name {
 header .inner .sub-menu {
   position: relative;
 }
+
+#uname {
+  position: absolute;
+  right: 23px;
+  top: 34px;
+  color: rgb(140, 135, 142);
+}
+#uname span {
+  color: #2c2c2c;
+}
+
 header .inner .sub-menu ul {
   display: flex;
   position: absolute;

@@ -9,8 +9,7 @@
   <title>My Blog</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <link rel="stylesheet" href="{% static 'css/diary.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 
@@ -25,25 +24,13 @@
 
       <div class="sub-menu">
         <ul>
-          {% if user.is_authenticated %}
-          <li>
-            <a href="{% url 'logout' %}">LogOut</a>
-          </li>
-          {% else %}
           <li>
             <a href="{% url 'login' %}">LogIn</a>
           </li>
           <li>
             <a href="">Sign Up</a>
           </li>
-          {% endif %}
         </ul>
-
-        {% if user.is_authenticated %}
-        <div id="uname">
-          안녕하세요, <span>{{ user.username }}</span> 님!
-        </div>
-        {% endif %}
       </div>
 
       <div class="main-menu">
@@ -62,22 +49,20 @@
     </div>
   </header>
 
-  <section>
+  <section id="login-section">
     <div class="inner">
-      <div class="content-wrap">
-        {% block content %}
+      {% block content %}
 
-        {% endblock %}
-      </div>
-      <nav class="category-list">
-
-      </nav>
+      {% endblock %}
     </div>
   </section>
 
   <footer>
 
   </footer>
+
+
+  <script src="{% static 'js/login.js' %}"></script>
 </body>
 
 </html>

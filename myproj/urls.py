@@ -18,11 +18,14 @@ from django.urls import path
 from myapp import views
 from django.conf import settings  # media
 from django.conf.urls.static import static  # media
+from accounts import views as aviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('base/', views.base, name='base'),
     path('diary/', views.diary, name='diary'),
+    path('login/', aviews.login, name='login'),
+    path('logout/', aviews.logout, name='logout'),
 
     path('', views.home, name='home'),
 

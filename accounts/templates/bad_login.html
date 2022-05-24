@@ -1,0 +1,11 @@
+{% extends 'login_base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="login-title">
+  <p>잘못된 로그인 정보입니다.</p>
+</div>
+
+<a class="move-form" href="{% url 'login' %}">다시 로그인하러 가기</a>
+<a class="move-form" href="{% url 'base' %}">홈으로 가기</a>
+{% endblock %}
