@@ -21,6 +21,9 @@ from django.conf.urls.static import static  # media
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('base/', views.base, name='base'),
+    path('diary/', views.diary, name='diary'),
+
     path('', views.home, name='home'),
 
     path('postform/', views.post_form, name='post_form'),

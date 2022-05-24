@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/diary.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+
+<body>
+  <header>
+    <div class="inner">
+      <a href="{% url 'base' %}" class="logo">
+        <img src="{% static 'img/logo.png' %}" alt="LOGO">
+      </a>
+
+      <a href="{% url 'base' %}" class="blog-name">My Blog</a>
+
+      <div class="sub-menu">
+        <ul>
+          <li>
+            <a href="">LogIn</a>
+          </li>
+          <li>
+            <a href="">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="{% url 'diary' %}">Diary</a>
+          </li>
+          <li>
+            <a href="">Diet</a>
+          </li>
+          <li>
+            <a href="">Study</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="inner">
+      <div class="content-wrap">
+        {% block content %}
+  
+        {% endblock %}
+      </div>
+      <nav class="category-list">
+  
+      </nav>
+    </div>
+  </section>
+
+  <footer>
+
+  </footer>
+</body>
+
+</html>

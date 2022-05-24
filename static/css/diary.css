@@ -1,0 +1,69 @@
+#new-post-inner {
+  background-color: wheat;
+}
+
+#new-post {
+  background-color: white;
+  width: 110px;
+  height: 35px;
+
+  border-radius: 8px;
+  border: 2.5px solid rgb(100, 100, 100);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 40px;
+  right: 90px;
+}
+#new-post a{
+  font-size: 20px;
+  color:rgb(100, 100, 100);
+}
+#new-post:hover,
+#new-post:hover a {
+  border-color: rgb(9, 146, 9);
+  color: rgb(9, 146, 9);
+  background-color: rgb(238, 249, 238);
+}
+
+#post-list {
+  margin: 100px auto;
+  width: 90%;
+}
+
+#post-list table {
+  width: 100%;
+  border-radius: 7px;
+}
+
+#post-list table thead {
+  background-color: rgb(54, 102, 206);
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 7px;
+}
+#post-list table thead tr td:first-child,
+#post-list table tbody tr td:first-child {
+  width: 70%;
+  border-right: 1.5px solid whitesmoke;
+}
+
+#post-list table tbody {
+  font-size: 16px;
+  background-color: rgb(239, 243, 251);
+  color:rgb(100, 100, 100);
+}
+#post-list table tbody tr {
+  border-bottom: 1.5px solid whitesmoke;
+}
+#post-list table tbody tr td {
+  padding: 20px;
+}
+#post-list table tbody tr td a {
+  color:rgb(100, 100, 100);
+}

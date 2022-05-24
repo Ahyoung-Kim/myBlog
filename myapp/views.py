@@ -3,11 +3,22 @@ from .models import Post, Comment
 from .forms import PostForm, CommentForm
 
 
+def base(request):
+    return render(request, 'base.html')
+
+
 def home(request):
     # 작성한 글들을 index.html에 띄우기
     # Post 객체를 DB에서 모조리 가져오기, 'date' 내림차순으로
     posts = Post.objects.filter().order_by('-date')
     return render(request, 'index.html', {'posts': posts})
+
+
+def diary(request):
+    # 작성한 글들을 index.html에 띄우기
+    # Post 객체를 DB에서 모조리 가져오기, 'date' 내림차순으로
+    posts = Post.objects.filter().order_by('-date')
+    return render(request, 'diary.html', {'posts': posts})
 
 # 새 글 작성 폼
 

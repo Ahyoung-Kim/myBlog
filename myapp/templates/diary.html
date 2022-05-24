@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="new-post-inner" class="inner">
+  <!-- '새 글 작성' 을 누르면 urls.py에 등록한 post_form 이름의 path() 실행 -->
+  <div id="new-post">
+    <a href="{% url 'post_form' %}">새 글 작성</a>
+  </div>
+</div>
+
+<!-- 게시글 띄우기 -->
+<div id="post-list">
+  <table>
+    <thead>
+      <tr>
+        <td>제목</td>
+        <td>작성날짜</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+      <tr>
+        <td>
+          <a href="">{{ post.title }}</a>
+        </td>
+        <td>{{ post.date }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
